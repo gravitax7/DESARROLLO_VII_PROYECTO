@@ -1,0 +1,20 @@
+{
+    "name": "alvan/proyecto",
+    "description": "proyecto de envio masivo de correos",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Alvan\\Proyecto\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Alvan Samudio",
+            "email": "marthin_0712@hotmail.com"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.6",
+        "phpmailer/phpmailer": "^7.0"
+    }
+}
