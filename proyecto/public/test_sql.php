@@ -1,7 +1,7 @@
 <?php
-require_once '../src/dataBase.php';
+require_once '../database/dataBase.php';
 $database = new DataBase();
-$conn = $database->conectar();
+$conn = $this->database->conn;
 
 if($conn){
     echo "<h1>Conexion establecida con éxito</h1>";

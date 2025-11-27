@@ -1,0 +1,13 @@
+Para empezar.
+
+% LARAGON (estoy usando la v8.3.0, 2025)
+% COMPOSER, instalado en la carpeta php de laragon (en mi caso: C:\laragon\bin\php\php-8.3.26-Win32-vs16-x64 )
+
+#### COMANDOS COMPOSER ####
+importantes para la instalación de Dotvenv y phpmailer
+- composer require vlucas/phpdotenv
+- composer require phpmailer/phpmailer
+
+#### Base de datos ####
+Crear database en mysql, con nombre "proyecto"
+- Estructura de tablas en archivo ../database/migrations/estructura.sql, ejecutar este script en caso que se ejecute el programa en otro equipo.
