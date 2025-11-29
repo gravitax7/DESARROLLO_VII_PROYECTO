@@ -4,6 +4,19 @@ require '../vendor/autoload.php';
 require_once ROOT_PATH . '/src/controllers/listControllers.php';
 use PHPMailer\PHPMailer\PHPMailer;
 $mail = new PHPMailer(true);
+//basicamente con esto creo la url base, que aqui la uso para redirigir al login si no existe una sesión activa en el navegador.
+//pero igual se puede usar para cualquier otra redirección ya que index.php es mi página base
+$protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http";
+$host = $_SERVER['HTTP_HOST'];
+$script = $_SERVER['SCRIPT_NAME'];
+$url_base = $protocol . "://" . $host . "/DESARROLLO_VII_PROYECTO/proyecto";
+define("URL_BASE", $url_base);
+//redirección si no hay sesión activa
+session_start();
+if(!isset($_SESSION['usuario'])){
+    header("Location:". $url_base ."/login/login.php");
+    exit();
+}
 
 $page = $_GET['page'] ?? 'home' ;
 ob_start();
